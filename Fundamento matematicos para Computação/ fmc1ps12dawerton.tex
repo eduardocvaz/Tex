@@ -1,0 +1,222 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\author{Dawerton Eduardo Carlos Vaz }
+
+
+
+\usepackage{bbding}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+
+\def\ints{{\mathbb Z}}
+\def\nats{{\mathbb N}}
+\def\by#1{&& \text{(#1)}\\}
+\def\halmos{ \begin{flushright} \RectangleBold \end{flushright}}
+
+\begin{document}
+
+
+\section*{Problema 1.}
+Com as definições das operações do capítulo  \guillemotleft Naturais; recursão; indução\guillemotright , demonstre a distributividade
+esquerda da $\cdot$ sobre a $+$ nos naturais:
+
+
+
+ \begin{center} $(\forall x)(\forall a)(\forall b)[x\cdot(a+b)=(x\cdot a)(x\cdot b)]$ \end{center}
+
+Das propriedades de operações podes apenas considerar como dada a associatividade da $+$
+
+%demonstração
+\section*{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Por indução no $b$!
+
+BASE: $x\cdot(a+0)\stackrel{?}{=}(x\cdot a)+(x\cdot 0) $ 
+
+Calculamos:
+
+
+\begin{align*}
+x\cdot (a+0)& = x\cdot a            \by {Pela (a1) com $n:=a$} \\
+(x\cdot a)+(x\cdot0)& =x\cdot a+0   \by {Pela (m1) com $n:=x$}
+& = x\cdot a                        \by {Pela (a1) com $n:=a$}
+\end{align*}
+
+Passo Indutivo. Seja $k\in \ints$ tal que:
+
+\begin{center}$x\cdot(a+k)=(x\cdot a)+(x\cdot k)$  (H.I)\end{center}
+
+Basta demonstrar que $x\cdot(a+(k+1))=(x\cdot a)+(x\cdot (k+1))$\newline
+
+Calculamos:
+
+\begin{align*}
+x\cdot(a+(k+1))& = x\cdot((a+k)+1)  \by {Pela associatividade da $+$}
+& =(x\cdot(a+k))+x                  \by {Pela (m2) com $n:=x, \ m:=(a+k)$}
+& = ((x\cdot a)+(x\cdot k))+x       \by {H.I}
+& = (x\cdot a)+((x\cdot k)+x)  \by {Pela associatividade da $+$}
+& = (x\cdot a)+(x\cdot (k+1))  \by {Pela (m2$^\leftarrow$) com $n:=x, \ m:=(k$}
+\end{align*}
+
+ \halmos
+%fimdemonstração
+ \newpage
+ \section*{Problema 2.}
+ Divulgando o LEM (princípio do terceiro excluido) tentei vender a idéia que seria essencial para demonstrar
+mais proposições do que realmente é! Com as definições de par e ímpar seguintes
+\begin{center}
+$n \ par \stackrel{def}{\iff} (\exists k \in \ints)[n=2k]$ \\
+$n \ impar \stackrel{def}{\iff} (\exists k \in \ints)[n=2k+1]$
+\end{center}
+e sem usar nenhum dos feitiços que discutimos (LEM, Reductio ad Absurdum, Lei da dupla negação, etc.)
+demonstre diretamente (por indução) a proposição: todo número natural é par ou ímpar
+
+%demonstração
+\section*{Demonstração} 
+
+Vou demonstrar a proposição.\newline
+Por indução!
+
+BASE: $(\exists t \in \ints)[0=2t] \ \stackrel{?}{ou} \ (\exists t \in \ints)[0=2t+1] $ 
+
+Suponha t=0
+
+Calculamos:
+\begin{align*}
+0& = 2\cdot0 \\
+& = 0  
+\end{align*}
+
+Como $0\in \ints$, logo $(\exists t \in \ints)[0=2t] \ ou \ (\exists t \in \ints)[0=2t+1] $\\
+
+
+PASSO INDUTIVO. Seja $k\in \ints$ tal que:
+
+\begin{center}$(\exists t \in \ints)[k=2t] \ ou \ (\exists t \in \ints)[k=2t+1] $  (H.I)\end{center}
+
+Basta demonstrar que $(\exists t \in \ints)[k+1=2t] \ ou \ (\exists t \in \ints)[k+1=2t+1] $ \newline
+
+CASO  $(\exists t \in \ints)[k=2t]$
+
+Seja $t\in \ints$, tal que $k=2t$
+
+Calculamos:
+\begin{align*}
+k+1& = (2t)+1           \by {Hipótese do caso} 
+& =2t+1   
+\end{align*}
+
+Como $t\in \ints$, logo $(\exists t \in \ints)[k+1=2t] \ ou \ (\exists t \in \ints)[k+1=2t+1] $\\
+
+CASO  $(\exists t \in \ints)[k=2t+1]$
+
+Seja $t\in \ints$, tal que $k=2t+1$
+
+Calculamos:
+\begin{align*}
+k+1& = (2t+1)+1     \by {Hipótese do caso} 
+& =2t+(1+1)         \by {Pela associatividade da $+$} 
+& =2t+ 2         \\
+& =2\cdot(t+1)         && \text{(distributividade da multiplicação)} 
+\end{align*}
+Como $(t+1)\in \ints$, logo $(\exists t \in \ints)[k+1=2t] \ ou \ (\exists t \in \ints)[k+1=2t+1] $
+\halmos  \newpage
+%fimdemonstração
+
+\section*{Problema 3.}
+Considere a funcção recursiva $\nats^2\longrightarrow \nats $, definida pelas equações:\\
+  \begin{align*}
+  \text{(K1)} && \alpha(0,x) &= x + 1 \\
+  \text{(K2)} &&\alpha(n+1, 0) &= \alpha(n,1) \\
+  \text{(K3)} && \alpha(n+1, x+1)&= \alpha(n, \alpha(n+1,x))
+  \end{align*}\\
+
+(i) Demonstre que para todo $x \in \nats, \alpha(1, x) = x + 2.$ \\
+(ii) Dado que para todo $x \in \nats, \alpha(2, x) = 2x + 3$, demonstre que para todo $x \in \nats, \alpha(3, x) = 2^{x+3}-3$.
+%demonstração
+\section*{Demonstração}
+
+Vou demonstrar a proposição (i).\newline
+Por indução!
+
+BASE: $\alpha(1,0)\stackrel{?}{=}0+2 $ 
+
+Calculamos:
+
+
+\begin{align*}
+\alpha(1,0)& = \alpha(0,1)          \by {Pela (K2) com $n:=0$}
+& =1+1                              \by {Pela (K1) com $x:=1$}
+& = 2                               
+\end{align*}
+
+Passo Indutivo. Seja $k\in \ints$ tal que:
+
+\begin{center} $\alpha(1,k)=k+2 $  (H.I)\end{center}
+
+Basta demonstrar que $\alpha(1,(k+1))=(k+1)+2 $\newline
+
+Calculamos:
+
+\begin{align*}
+\alpha(1,(k+1))& =\alpha(0,\alpha (1,k))    \by {Pela (K3) com $n:=0, x:=k$}
+& =\alpha(0,(k+2))                          \by {H.I}
+& = (k+2)+1                                 \by {Pela (K1) com $x:=k+2$}
+& = k+(2+1)                                 \by {Associatividade da +}
+& = k+(1+2)                                 \by {Comutatividade da +}
+& = (k+1)+2                                 \by {Associatividade da +}
+\end{align*}
+
+ \halmos
+%fimdemonstração
+
+\newpage
+
+\section*{Demonstração}
+
+Vou demonstrar a proposição (ii).\newline
+Temos que para todo $x \in \nats, \alpha(2, x) = 2x + 3$$_{(d13)}$\\
+Por indução!
+
+BASE: $\alpha(3, 0) = 2^{0+3}-3$
+
+Calculamos:
+
+
+\begin{align*}
+\alpha(3,0)& = \alpha(2,1)          \by {Pela (K2) com $n:=2$}
+& =2+3                              \by {d13 x:=1}
+& = 5\\
+& = 2^3-3
+\end{align*}
+
+Passo Indutivo. Seja $k\in \ints$ tal que:
+
+\begin{center} $\alpha(3, k) = 2^{k+3}-3$  (H.I)\end{center}
+
+Basta demonstrar que  $\alpha(3, (k+1)) = 2^{(k+1)+3}-3$ \newline
+
+Calculamos:
+
+\begin{align*}
+\alpha(3,(k+1))& =\alpha(2,\alpha (3,k))    \by {Pela (K3) com $n:=2, x:=k$}
+& =\alpha(2,(2^{k+3}-3))                          \by {H.I}
+& = 2\cdot(2^{k+3}-3)+3                                 \by {d13 x:=$(2^{k+3}-3)$}
+& =  (2\cdot2^{k+3})-6+3                                 \by {Propriedade distributiva }
+& = (2\cdot2^{k+3})-3                                  \\
+& = 2^{(k+3)+1}-3                                \by {Def. Potenciação}
+& = 2^{k+(3+1)}-3                                \by {Associatividade da +}
+& = 2^{k+(1+3)}-3                                \by {Comutatividade da +}
+& = 2^{(k+1)+3}-3                                \by {Associatividade da +}
+\end{align*}
+
+ \halmos
+%fimdemonstração
+\pagestyle{fancy}.
+\rfoot{Só isso mesmo.}
+\end{document}

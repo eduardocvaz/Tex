@@ -1,0 +1,134 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\author{Dawerton Eduardo Carlos Vaz }
+
+
+\usepackage{bbding}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+
+\def\ints{{\mathbb Z}}
+\def\nats{{\mathbb N}}
+\def\by#1{&& \text{(#1)}\\}
+\def\halmos{ \begin{flushright} \RectangleBold \end{flushright}}
+
+\begin{document}
+
+
+\section*{Problema 1.}
+Conte em quantas maneiras podemos cobrir um tabuleiro de dimensão $2 \times n$ com peças-dominô (ou seja,
+peças de dimensão $2 \times 1$).
+
+
+
+%demonstração
+\section*{Demonstração}
+
+Seja D(n) o número de maneiras que podemos cobrir um tabuleiro de dimensão $2 \times n$ com peças-dominô.
+
+Usando o principio da adição.
+\begin{align*}
+D(0)& = 1      &&    \\
+D(1)& =1      &&   \\
+\forall n>1 D(n)& =D(n-1) + D(n-2)
+\end{align*}
+
+$\underbrace{D(n-1)}_{\text{onde o tabuleiro começa com uma peça no vertical}}$
+
+$\underbrace{D(n-2)}_{\text{{onde o tabuleiro começa com duas peças no vertical, ou horizontal}}}$
+
+%fimdemonstração
+ \newpage
+ \section*{Problema 2.}
+ Do alfabeto \{$a, b, c$\} desejamos formar strings de tamanho $\ell$ onde não aparece o substring ab. Em quantas
+maneiras podemos fazer isso?
+
+%demonstração
+\section*{Demonstração} 
+Seja K(n) o número de maneiras que podemos formar a string de tamanho n onde não aparece a substring ab.
+
+Usando o principio da adição.
+\begin{align*}
+K(0)& = 1      &&    \\
+K(1)& =3      &&   \\
+K(2)& =8      &&   \\
+\forall n>2 \ K(n)& =K(n-1) + K(n-1) + K(n-2) + K(n-2) - K(n-3) \\
+\end{align*}
+
+$\underbrace{K(n-1)}_{\text{onde $a$ string não começa com o caractere a}}$
+
+$\underbrace{K(n-2)}_{\text{{onde $a$ string não começa com o caractere $ab$}}}$
+
+$\underbrace{K(n-3)}_{\text{{onde a string começa com o caractere $b$ e depois é colocado o $a$ antes dele}}}$
+
+\newpage
+%fimdemonstração
+
+\section*{Problema 3.}
+Definimos a $\leq$ nos naturais assim:
+
+\begin{center}
+$n\leq m \stackrel{\text{def}}{\iff} (\exists k \in \nats)[n+k=m]$ \\
+\end{center}
+Demonstre por indução que $\leq$ é uma bem-ordem:\\ \
+\begin{center}
+Para todo $A \subseteq \nats$, $A = \emptyset $ ou $A$ possui mínimo.
+\end{center}
+Dica: visualise teu alvo assim:
+\begin{center}
+    $(\forall n \in \nats)(\forall A \subseteq \nats)[|A|=n \implies \text{A vazio ou possui minimo}]$
+\end{center}
+
+Onde $|A|$ denota a cardinalidade do $A$, ou seja, a quantidade de membros de $A$. 
+Considere conhecido que:\\
+\begin{align*}
+|A|=0 & \iff A = \emptyset _{(a1101)}      &&    \\
+|A|=Sn& \iff (\exists a \in A)(\exists A'\subseteq A)[a\notin A' \ \& \ |A'| = n] \ \& \ (\forall x \in A)[x=a \ \text{ou} \ x \in A']]  _{(b1101)}    &&
+\end{align*}
+Lembre-se que $m \in A$ é minimo membro de $A$ sse $(\forall x \in A)[m \leq a]$
+
+%demonstração
+\section*{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Por indução!
+
+BASE\\
+Suponha |A|=0 \\
+Logo pela $(a1101)$ $A = \emptyset $ ou $A$ possui mínimo.\\
+Passo Indutivo. Seja $k\in \nats$ tal que:\\
+
+\begin{center} $(\forall A \subseteq \nats)[|A|=k \implies A=\emptyset \ \text{ou possui minimo}]$  (H.I)\end{center}
+Basta demonstrar que $(\forall A \subseteq \nats)[|A|=Sk \implies A=\emptyset \ \text{ou possui minimo}]$\\ \\
+Seja $A \subseteq \nats \ \text{tal que} \ |A|=Sk$\\
+Sejam $a\in A$ e $A' \subseteq A$ tais que $a\notin A' \ \& \ |A'| = n \ \& \ (\forall x \in A)[x=a \ \text{ou} \ x \in A']$\\
+Logo $A' \subseteq \nats$ ($A' \subseteq A \subseteq \nats$)\\
+Logo pelo H.I,  $A'= \emptyset$ ou possui minimo.\\
+Dividindo em casos \\ \\
+CASO $A'=\emptyset$\\ \\ 
+Logo pela (b1101) $(\forall x \in A)[x=a]$\\
+Logo $A$ possui minimo.\\ \\
+CASO $A'$ possui minimo\\ 
+Seja $y \in A'$ tal que $(\forall m \in A')[y \leq m]$\\
+Logo $(\forall m \in A)[y \leq m\leq a \ \text{ou} \ a \leq y\leq m]$\\
+Logo A possui minimo.
+ \halmos
+%fimdemonstração
+
+\newpage
+\section*{Problema 4.}
+Faria sentido trocar o ‘$(\exists a \in A)$’ por ‘$(\forall a \in A)$’ na penúltima linha do Problema 3? Explique curtamente.\\
+Resposta:
+Não, pois $A'$ não poderia ser subconjunto de $A$ \\ \\
+
+
+
+
+%fimdemonstração
+\pagestyle{fancy}.
+\rfoot{Só isso mesmo.}
+\end{document}

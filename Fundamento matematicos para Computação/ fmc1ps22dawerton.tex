@@ -1,0 +1,127 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\author{Dawerton Eduardo Carlos Vaz }
+
+
+\usepackage{bbding}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage[pdftex]{hyperref}
+
+\def\ints{{\mathbb Z}}
+\def\nats{{\mathbb N}}
+\def\by#1{&& \text{(#1)}\\}
+\def\halmos{ \begin{flushright} \RectangleBold \end{flushright}}
+
+\begin{document}
+
+
+\section*{Problema 1.}
+Demonstre que dado qualquer inteiro a, existem únicos inteiros q e r tais que $a = 3q + r$ e $-1 \leq r \leq 1$.
+
+
+
+%demonstração
+\section*{Demonstração}
+Existência\\\\
+Seja $a \in \ints{}$\\\\
+Dividindo em casos\\\\
+Caso $3 \nmid a$ \\
+Logo existe $q \in \ints$ tal que $a=3q+1$ ou $a=3q-1$\\
+Logo $a=3q+r$ com $r=1 $ ou $ r=-1$\\\\
+Caso $3 \mid a$ \\
+Logo existe $q' \in \ints$ tal que $a=3q'+0$\\
+Logo $a=3q'+r'$ com $r'=0$\\\\
+Logo pelos 2 casos existe $q\in \ints$ tal que $a=3q+r$ com $r=1$ ou $r=-1$ ou $r=0$\\
+Logo existe $q,r \in \ints$ tais que $a=3q+r$ $\And$  $-1 \leq r \leq 1$
+ \halmos
+ Unicidade\\\\
+ Suponha $q,r,q',r' \in \ints$ tais  que  \\\\
+ $a=3q +r$ $\And$  $-1 \leq r \leq 1$ $\And$\\
+ $a=3q'+r'$ $\And$  $-1 \leq r' \leq 1$\\\\
+Logo $3q'+r'= 3q+r$\\
+Logo $r-r'= 3(q-q')$\\
+Como $r<3$\\
+logo $r-r'=0$\\
+logo $q-q'=0$\\
+logo $q=q'\And r=r'$\\
+\halmos
+%fimdemonstração
+ \newpage
+ \section*{Problema 2.}
+\href{https://piazza.com/class_profile/get_resource/keqeithjxj94mi/khq0si0s95z71}{Clique aqui}
+
+
+%demonstração
+\section*{Demonstração} 
+Existência\\
+Vou demonstrar para $x \in \ints$.\\
+Logo que multiplicando $d_m...d_0$ por $-1$ individualmente temos o valor negativo da representação.
+Logo demonstrano para $x \in \ints$\\\\
+Pela demonstração do problema 1, Sejam $q,r$ tais que\\
+$x=3q +r$ $\And$  $-1 \leq r \leq 1$\\
+Usando indução forte\\
+Como $q<x$\\
+Logo pela H.I\\
+$q=d_m3^m+...+d_13^1+d_03^0$\\
+Logo $x=3(d_m3^m+...+d_13^1+d_03^0)+r$\\
+Aplicando a propriedade distributiva\\
+Logo $x=d_m3^{m+1}+...+d_13^2+d_03^1+r$\\
+Logo $x=d_m3^{m+1}+...+d_13^2+d_03^1+r3^0$\\
+onde $-1 \leq r \leq 1$\\
+\halmos
+Unicidade\\
+A unicidade é dada como consequência imediata da unicidade da demonstração do problema 1 e da Hipotese indutiva.
+ \newpage
+%fimdemonstração
+
+\section*{Problema 3.}
+Demonstre por indução que para todo $n \in \nats$\\
+\begin{align*}
+\sum_{i=0}^{n}i\cdot i!& = (n + 1)! - 1     &&    \\
+\end{align*}
+%demonstração
+\section*{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Por indução!
+
+BASE $0\cdot 0!& \stackrel{?}{=} (0 + 1)! - 1$\\
+\begin{align*}
+0\cdot 0!& = 0     &&    \\
+(0 + 1)! - 1& = 0     &&    \\
+\end{align*}
+Passo Indutivo. Seja $k\in \nats$ tal que:\\
+
+\begin{align*}
+\sum_{i=0}^{k}i\cdot i!& = (k + 1)! - 1     \by{H.I}
+\end{align*}
+Basta demonstrar que $\sum_{i=0}^{k+1}i\cdot i!& = ((k+1) + 1)! - 1$\\ \\
+Calculamos
+\begin{align*}
+\sum_{i=0}^{k+1}i\cdot i!& = \sum_{i=0}^{k}i\cdot i!+(k+1)(k+1)!     &&    \\
+& = (k+1)!-1+(k+1)(k+1)!     \by{H.I}
+& =(k+1)!+(k+1)(k+1)!-1    &&   \\
+& =(k+1)!+\underbrace{(k+1)!+(k+1)!+...+(k+1)!}_{(k+1) \text{ vezes}}-1    &&   \\
+& =\underbrace{(k+1)!+(k+1)!+(k+1)!+...+(k+1)!}_{(k+2) \text{ vezes}}-1    &&   \\
+& =(k+2)\cdot(k+1)!-1    &&   \\
+& =((k+1)+1)!-1    &&   \\
+\end{align*}
+ \halmos
+%fimdemonstração
+
+\newpage
+\section*{Problema 4.}
+Dawerton 4 (demonstração errada e sem tempo para consertar devido à outras turmas)
+
+
+
+
+%fimdemonstração
+\pagestyle{fancy}.
+\rfoot{Só isso mesmo.}
+\end{document}

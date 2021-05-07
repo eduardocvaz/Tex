@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\author{Dawerton Eduardo Carlos Vaz }
+
+\def \adivb{{$a\ |\ b$}}  
+\def \bdivc{{$b\ |\ c$}}  
+\def \adivc{{$a\ |\ c$}} 
+\def \aexpb{{$a\ \| \ b$}}  
+\def \bexpc{{$b\ \| \ c$}}  
+\def \aexpc{{$a\ \| \ c$}} 
+
+
+\usepackage{bbding}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+\begin{document}
+
+
+\section{Definição D2.}
+Sejam $a, b \in \mathbf Z _{\ge 0}$. Dizemos que a explode b \ (\aexpb) ,sse existe inteiro $k \ge 0$ tal que $a^k=\ b$.
+
+\section{Proposição P1.}
+
+Para quaisquer $a,b \in \mathbf Z _{\ge 0}$, se \aexpb , então \adivb.
+%.Demonstração
+
+\section{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Sejam $a,b \in \mathbf Z _{\ge 0}$ tais que \aexpb.\ Logo seja $k \in \mathbf Z _{\ge 0} $ tal que $a^k=b$.\newline
+
+Dividindo em Casos.\newline
+
+CASO $k=0$. Calculamos:\newline
+
+
+
+\begin{align*}
+a^k& =
+&& \text{}\\
+& =a^0
+&& \text{}\\
+& = 1
+&& \text{(Propriedade da potenciação)}\\
+& = 1\cdot1
+&& \text{}\\
+& = b
+&& \text{}\\
+\end{align*}
+
+Como $1 \in \mathbf Z$, logo \adivb. \newline
+
+CASO $k>0$. Calculamos:
+
+
+
+
+\begin{align*}
+a^k& =
+&& \text{}\\
+& =a \cdot (a^{k-1})
+&& \text{(Propriedade da potenciação)}\\
+\end{align*}
+
+Como $(a^{k-1}) \in \mathbf Z$, logo \adivb. \RectangleBold
+
+%.FimDemonstração
+
+ \newpage
+
+ 
+\section{Definição D1.}
+Sejam $a, b \in \mathbf Z _{\ge 0}$. Dizemos que a explode b \ (\aexpb) \ sse existe inteiro $k$ tal que $a^k=\ b$.
+
+\section{Proposição P2.}
+
+Para quaisquer $a,b,c \in \mathbf Z _{\ge 0}$, se \aexpb \ e  \ \bexpc , então \aexpc{}.
+
+%.Demonstração
+
+\section{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Sejam $a,b,c \in \mathbf Z _{\ge 0}$ tais que \aexpb \ \ e \ \bexpc.\ Logo sejam $w,k \in \mathbf Z $ tais que $a^w=b$ e $b^k=c$.\newline
+
+Calculamos:\newline
+
+
+
+\begin{align*}
+b^k& =
+&& \text{}\\
+& ={(a^w)}^k
+&& \text{($b=a^w$)}\\
+& = {a}^{(w \cdot k)}
+&& \text{(Propriedade da potenciação)}\\
+& = c.
+&& \text{}\\
+\end{align*}
+
+Como ${(w \cdot k)} \in \mathbf Z$, logo \aexpc.  \RectangleBold
+
+%.FimDemonstração
+ \newpage
+
+ 
+\section{Definição D3.}
+Sejam $a, b \in \mathbf Z _{\ge 0}$. Dizemos que a explode b \ (\aexpb) ,sse existe inteiro $k > 0$ tal que $a^k=\ b$.
+
+\section{Proposição P3.}
+
+Para quaisquer $a,b,c \in \mathbf Z _{\ge 0}$, se \adivb \ \ e \ \bexpc \ então \adivc.
+
+%.Demonstração
+
+\section{Demonstração}
+
+Vou demonstrar a proposição.\newline
+Sejam $a,b,c \in \mathbf Z _{\ge 0}$ tais que \adivb \ \ e \ \bexpc.\ Logo sejam $w,k \in \mathbf Z  _{>0}$ tais que $a \cdot w=b$ e $b^k=c$.\newline
+
+Calculamos:\newline
+
+
+
+\begin{align*}
+b^k& =
+&& \text{}\\
+& ={(a\cdot w)}^k
+&& \text{($b=a\cdot w$)}\\
+& = {a^k \cdot w^k}
+&& \text{(Propriedade da potenciação)}\\
+& = a\cdot {(a^{k-1}) \cdot w^k}
+&& \text{(Propriedade da potenciação, aplicada em $a^k$)}\\
+& = c.
+&& \text{}\\
+\end{align*}
+
+Como ${(a^{k-1} \cdot w^k)} \in \mathbf Z$, logo \adivc.  \RectangleBold
+
+%.FimDemonstração
+
+\end{document}
